@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Padaria Grão Café</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <!-- Menu Fixo no Topo -->
+  <header>
+    <div class="container">
+      <h1>Confeitaria Grão Café</h1>
+      <nav>
+        <ul>
+          <li><a href="#inicio" class="nav-link">Início</a></li>
+          <li><a href="#produtos" class="nav-link">Produtos</a></li>
+          <li><a href="#encomendas" class="nav-link">Encomendas</a></li>
+          <li><a href="#login" class="nav-link">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main>
+    <!-- Seção Início -->
+    <section id="inicio" class="section active">
+      <div class="container">
+        <h2>Bem-vindo à Confeitaria Grão Café</h2>
+        <p>A doçura que você merece, feita com carinho e qualidade. Grão Café, uma confeitaria que nasceu para encantar!</p>
+        <div class="galeria">
+          <div class="produto">
+            <img src="images/brigadeiro.png" alt="Brigadeiro">
+            <p>Brigadeiro</p>
+          </div>
+          <div class="produto">
+            <img src="images/tortaoreo.png" alt="Torta Oreo">
+            <p>Torta Oreo</p>
+          </div>
+          <div class="produto">
+            <img src="images/bolochocolate.png" alt="Bolo de Chocolate">
+            <p>Bolo de Chocolate</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Produtos -->
+    <section id="produtos" class="section">
+      <div class="container">
+        <h2>Nossos Produtos</h2>
+        <div class="galeria">
+          <div class="produto">
+            <img src="imagens/pao.jpg" alt="Pão Francês">
+            <p>Pão Francês - R$ 1,00/un</p>
+          </div>
+          <div class="produto">
+            <img src="images/Captura de tela 2025-01-10 071222.png" alt="Bolo de Chocolate">
+            <p>Bolo de Chocolate - R$ 20,00/kg</p>
+          </div>
+          <div class="produto">
+            <img src="imagens/torta.jpg" alt="Torta de Frango">
+            <p>Torta de Frango - R$ 15,00/un</p>
+          </div>
+        </div>
+        <a href="#inicio" class="btn-voltar">Voltar ao Início</a>
+      </div>
+    </section>
+
+    <!-- Seção Encomendas -->
+    <section id="encomendas" class="section">
+      <div class="container">
+        <h2>Faça sua Encomenda</h2>
+        <form id="encomendaForm">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required>
+          
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" required>
+          
+          <label for="produto">Produto:</label>
+          <select id="produto" name="produto" required>
+            <option value="pao">Pão Francês</option>
+            <option value="bolo">Bolo de Chocolate</option>
+            <option value="torta">Torta de Frango</option>
+          </select>
+          
+          <label for="quantidade">Quantidade:</label>
+          <input type="number" id="quantidade" name="quantidade" required>
+          
+          <label for="data">Data de entrega:</label>
+          <input type="date" id="data" name="data" required>
+          
+          <button type="submit">Enviar Encomenda</button>
+        </form>
+        <a href="#inicio" class="btn-voltar">Voltar ao Início</a>
+      </div>
+    </section>
+
+    <!-- Seção Login -->
+    <section id="login" class="section">
+      <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <label for="username">Usuário:</label>
+          <input type="text" id="username" name="username" required>
+          
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" required>
+          
+          <button type="submit">Entrar</button>
+        </form>
+        <a href="#inicio" class="btn-voltar">Voltar ao Início</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Confeitaria Grão Café. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

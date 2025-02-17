@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encomendas - Padaria da Mamãe</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="encomendas-container">
+    <h2>Faça sua encomenda</h2>
+    <form id="encomendaForm">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+      
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" required>
+      
+      <label for="produto">Produto:</label>
+      <select id="produto" name="produto" required>
+        <option value="pao">Pão Francês</option>
+        <option value="bolo">Bolo de Chocolate</option>
+        <option value="torta">Torta de Frango</option>
+      </select>
+      
+      <label for="quantidade">Quantidade:</label>
+      <input type="number" id="quantidade" name="quantidade" required>
+      
+      <label for="data">Data de entrega:</label>
+      <input type="date" id="data" name="data" required>
+      
+      <button type="submit">Enviar Encomenda</button>
+    </form>
+    <p id="encomendaMessage" class="message"></p>
+  </div>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

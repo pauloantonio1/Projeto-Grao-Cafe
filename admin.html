@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Padaria da Mamãe</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="admin-container">
+    <h2>Painel Administrativo</h2>
+    <form id="uploadForm">
+      <label for="foto">Enviar nova foto:</label>
+      <input type="file" id="foto" name="foto" accept="image/*" required>
+      
+      <label for="descricao">Descrição:</label>
+      <input type="text" id="descricao" name="descricao" required>
+      
+      <button type="submit">Enviar Foto</button>
+    </form>
+    <p id="uploadMessage" class="message"></p>
+  </div>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
