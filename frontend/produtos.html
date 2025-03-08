@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grão Café - Confeitaria</title>
+    <link rel="stylesheet" href="styleonline.css">
+    <link rel="shortcut icon" href="imagens/pnglogo (1).png" type="image/x-icon">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="imagens/grãocaféimagem.png" alt="Logo Grão Café">
+        </div>
+    </header>
+
+    <!-- Menu Fixo -->
+    <nav class="menu">
+        <div class="logo-frase">
+            <img src="imagens/logoredonda.png" alt="Logo Grão Café" class="logo-menu">
+            <span class="frase-pedido">Faça já o seu pedido!</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="login.html">Minha Conta</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="carrinho-login-menu">
+            <span>R$</span>
+            <span id="carrinho-valor-menu">0.00</span>
+            <span id="carrinho-quantidade">0 itens</span>
+            <span class="login-icon-menu">👤</span>
+        </div>
+    </nav>
+
+    <!-- Nossos Produtos -->
+    <section class="nossos-produtos">
+        <h2>Nossos Produtos</h2>
+        <div class="destaques-container">
+            <!-- Produto 1: Bolo Artesanal -->
+            <div class="destaque-item">
+                <img src="imagens/boloninho.jpg" alt="Bolo Artesanal">
+                <h3>Bolo Artesanal</h3>
+                <span class="preco">R$50.00</span>
+                <div class="quantidade">
+                    <label for="quantidade-bolo">Quantidade (kg):</label>
+                    <input type="number" id="quantidade-bolo" min="0" value="0">
+                </div>
+                <button class="adicionar-carrinho" data-nome="Bolo Artesanal" data-preco="50.00">Adicionar ao Carrinho</button>
+            </div>
+
+            <!-- Produto 2: Copo da Alegria -->
+            <div class="destaque-item">
+                <img src="imagens/Copodafelicidade.jpg" alt="Copo da Alegria">
+                <h3>Copo da Alegria</h3>
+                <span class="preco">R$15.00</span>
+                <div class="quantidade">
+                    <label for="quantidade-copo">Quantidade:</label>
+                    <input type="number" id="quantidade-copo" min="0" value="0">
+                </div>
+                <div class="sabor">
+                    <label for="sabor-copo">Sabor:</label>
+                    <select id="sabor-copo">
+                        <option value="chocolate">Chocolate</option>
+                        <option value="morango">Morango</option>
+                        <option value="baunilha">Baunilha</option>
+                    </select>
+                </div>
+                <button class="adicionar-carrinho" data-nome="Copo da Alegria" data-preco="15.00">Adicionar ao Carrinho</button>
+            </div>
+
+            <!-- Produto 3: Floresta Negra -->
+            <div class="destaque-item">
+                <img src="imagens/florestanegra.jpg" alt="Floresta Negra">
+                <h3>Floresta Negra</h3>
+                <span class="preco">R$40.00</span>
+                <div class="quantidade">
+                    <label for="quantidade-floresta">Quantidade (kg):</label>
+                    <input type="number" id="quantidade-floresta" min="0" value="0">
+                </div>
+                <button class="adicionar-carrinho" data-nome="Floresta Negra" data-preco="40.00">Adicionar ao Carrinho</button>
+            </div>
+
+            <!-- Produto 4: Torta Romeu e Julieta -->
+            <div class="destaque-item">
+                <img src="imagens/tortaromeuejulieta.jpg" alt="Torta Romeu e Julieta">
+                <h3>Torta Romeu e Julieta</h3>
+                <span class="preco">R$30.00</span>
+                <div class="quantidade">
+                    <label for="quantidade-torta">Quantidade:</label>
+                    <input type="number" id="quantidade-torta" min="0" value="0">
+                </div>
+                <button class="adicionar-carrinho" data-nome="Torta Romeu e Julieta" data-preco="30.00">Adicionar ao Carrinho</button>
+            </div>
+
+            <!-- Produto 5: Trufa -->
+            <div class="destaque-item">
+                <img src="imagens/Trufa.jpg" alt="Trufa">
+                <h3>Trufa</h3>
+                <span class="preco">R$5.00</span>
+                <div class="quantidade">
+                    <label for="quantidade-trufa">Quantidade:</label>
+                    <input type="number" id="quantidade-trufa" min="0" value="0">
+                </div>
+                <div class="sabor">
+                    <label for="sabor-trufa">Sabor:</label>
+                    <select id="sabor-trufa">
+                        <option value="chocolate">Chocolate</option>
+                        <option value="morango">Morango</option>
+                        <option value="baunilha">Baunilha</option>
+                        <option value="outro">Adicione o seu sabor</option>
+                    </select>
+                </div>
+                <button class="adicionar-carrinho" data-nome="Trufa" data-preco="5.00">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botão Flutuante "Ir para o Carrinho" -->
+    <a href="carrinho.html" id="botao-carrinho" class="botao-flutuante">Ir para o Carrinho</a>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2023 Grão Café. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Variáveis globais para o carrinho
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        let totalCarrinho = parseFloat(localStorage.getItem('totalCarrinho')) || 0;
+        let quantidadeItens = parseInt(localStorage.getItem('quantidadeItens')) || 0;
+
+        // Função para salvar o carrinho no localStorage
+        function salvarCarrinho() {
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            localStorage.setItem('totalCarrinho', totalCarrinho.toFixed(2));
+            localStorage.setItem('quantidadeItens', quantidadeItens);
+        }
+
+        // Função para atualizar o carrinho no menu
+        function atualizarCarrinhoMenu() {
+            const carrinhoValorMenu = document.getElementById('carrinho-valor-menu');
+            const carrinhoQuantidade = document.getElementById('carrinho-quantidade');
+            const botaoCarrinho = document.getElementById('botao-carrinho');
+
+            carrinhoValorMenu.textContent = totalCarrinho.toFixed(2);
+            carrinhoQuantidade.textContent = `${quantidadeItens} ${quantidadeItens === 1 ? 'item' : 'itens'}`;
+
+            // Mostrar ou esconder o botão flutuante
+            if (quantidadeItens > 0) {
+                botaoCarrinho.style.display = 'block';
+            } else {
+                botaoCarrinho.style.display = 'none';
+            }
+        }
+
+        // Função para adicionar item ao carrinho
+        function adicionarAoCarrinho(nome, preco, quantidade) {
+            const itemExistente = carrinho.find(item => item.nome === nome);
+
+            if (itemExistente) {
+                itemExistente.quantidade += quantidade;
+            } else {
+                carrinho.push({ nome, preco, quantidade });
+            }
+
+            totalCarrinho += preco * quantidade;
+            quantidadeItens += quantidade;
+
+            salvarCarrinho();
+            atualizarCarrinhoMenu();
+        }
+
+        // Função para remover item do carrinho
+        function removerDoCarrinho(nome, preco, quantidade) {
+            const itemExistente = carrinho.find(item => item.nome === nome);
+
+            if (itemExistente) {
+                if (itemExistente.quantidade > quantidade) {
+                    itemExistente.quantidade -= quantidade;
+                } else {
+                    carrinho = carrinho.filter(item => item.nome !== nome);
+                }
+
+                totalCarrinho -= preco * quantidade;
+                quantidadeItens -= quantidade;
+
+                salvarCarrinho();
+                atualizarCarrinhoMenu();
+            }
+        }
+
+        // Adicionar evento de clique aos botões "Adicionar ao Carrinho"
+        document.querySelectorAll('.adicionar-carrinho').forEach(botao => {
+            botao.addEventListener('click', () => {
+                const produto = botao.getAttribute('data-nome');
+                const preco = parseFloat(botao.getAttribute('data-preco'));
+                const quantidadeInput = botao.parentElement.querySelector('input[type="number"]');
+                const quantidade = parseFloat(quantidadeInput.value);
+
+                if (quantidade > 0) {
+                    adicionarAoCarrinho(produto, preco, quantidade);
+                    quantidadeInput.value = 0; // Resetar a quantidade após adicionar
+                }
+            });
+        });
+
+        // Adicionar evento de clique aos botões "Remover do Carrinho"
+        document.querySelectorAll('.remover-carrinho').forEach(botao => {
+            botao.addEventListener('click', () => {
+                const produto = botao.getAttribute('data-nome');
+                const preco = parseFloat(botao.getAttribute('data-preco'));
+                const quantidadeInput = botao.parentElement.querySelector('input[type="number"]');
+                const quantidade = parseFloat(quantidadeInput.value);
+
+                if (quantidade > 0) {
+                    removerDoCarrinho(produto, preco, quantidade);
+                    quantidadeInput.value = 0; // Resetar a quantidade após remover
+                }
+            });
+        });
+
+        // Inicializar o carrinho ao carregar a página
+        atualizarCarrinhoMenu();
+    </script>
+</body>
+</html>

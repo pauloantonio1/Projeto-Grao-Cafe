@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grão Café - Cadastro</title>
+    <link rel="stylesheet" href="login.css"> <!-- Mesmo CSS da página atual -->
+    <link rel="shortcut icon" href="imagens/pnglogo (1).png" type="image/x-icon">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="imagens/grãocaféimagem.png" alt="Logo Grão Café">
+        </div>
+    </header>
+
+    <!-- Menu Fixo -->
+    <nav class="menu">
+        <div class="logo-frase">
+            <img src="imagens/logoredonda.png" alt="Logo Grão Café" class="logo-menu">
+            <span class="frase-pedido">Faça já o seu pedido!</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="login.html">Minha Conta</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="carrinho-login-menu">
+            <span>R$</span>
+            <span id="carrinho-valor-menu">0.00</span>
+            <span id="carrinho-quantidade">0 itens</span>
+            <span class="login-icon-menu">👤</span>
+        </div>
+    </nav>
+
+    <!-- Conteúdo da Página de Cadastro -->
+    <div class="conteudo-cadastro">
+        <h2>Criar Cadastro</h2>
+        <form class="formulario-cadastro">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço" required>
+            </div>
+            <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" name="estado" placeholder="Digite seu estado" required>
+            </div>
+            <div class="form-group">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep" placeholder="Digite seu CEP" required>
+            </div>
+            <button type="submit" class="botao-cadastro">Criar Conta</button>
+            <p class="login-link">Já tem uma conta? <a href="login.html">Faça Login</a></p>
+        </form>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2023 Grão Café - Confeitaria. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

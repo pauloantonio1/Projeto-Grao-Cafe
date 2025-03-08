@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grão Café - Confeitaria</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="imagens/pnglogo (1).png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="imagens/grãocaféimagem.png" alt="Logo Grão Café">
+        </div>
+    </header>
+
+    <!-- Menu Fixo -->
+    <nav class="menu">
+        <div class="logo-frase">
+            <img src="imagens/logoredonda.png" alt="Logo Grão Café" class="logo-menu">
+            <span class="frase-pedido">Faça já o seu pedido!</span>
+        </div>
+        <ul>
+            <li><a href="produtos.html">Nossos Produtos</a></li>
+            <li><a href="#sobre">Sobre</a></li> <!-- Link âncora para a seção "Sobre" -->
+            <li><a href="login.html">Minha Conta</a></li>
+        </ul>
+        <div class="carrinho-login-menu">
+            <span class="login-icon-menu">👤</span>
+        </div>
+    </nav>
+
+    <!-- Banner com slideshow -->
+    <section class="banner">
+        <div class="slideshow-container">
+            <!-- Slides -->
+            <div class="slide active">
+                <div class="slide-imagem">
+                    <img src="imagens/boloninho.jpg" alt="Bolo de chocolate">
+                </div>
+                <div class="slide-texto">
+                    <h1>Bolo de Ninho com Morango</h1>
+                    <h2>Delicadeza e sabor em cada fatia! Nosso Bolo de Ninho com Morango combina a suavidade do leite Ninho com o frescor dos morangos,
+                        recheado com musse e brigadeiro de leite Ninho.
+                        Uma experiência irresistível para adoçar seus momentos especiais! 🍓✨</h2>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-imagem">
+                    <img src="imagens/florestanegra.jpg" alt="Floresta Negra">
+                </div>
+                <div class="slide-texto">
+                    <h1>Floresta Negra</h1>
+                    <h2>O clássico Floresta Negra com um toque especial: recheio cremoso de cream cheese, chocolate branco e cerejas, envolto em massa de chocolate fofinha.
+                    Uma explosão de sabor em cada fatia! 🍒🍫✨</h2>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-imagem">
+                    <img src="imagens/tortaromeuejulieta.jpg" alt="Torta Romeu e Julieta">
+                </div>
+                <div class="slide-texto">
+                    <h1>Torta Romeu e Julieta</h1>
+                    <h2>A Torta Romeu e Julieta é a combinação perfeita de sabores! Feita com um delicioso creme de cream cheese e chocolate branco, harmonizado com um suave creme de goiabada,
+                    essa sobremesa une o doce e o salgado de forma irresistível.
+                    Cada pedaço é uma verdadeira experiência para o paladar! ❤️🧀🍓</h2>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-imagem">
+                    <img src="imagens/copofelicidadeedit.png" alt="Copo da Felicidade">
+                </div>
+                <div class="slide-texto">
+                    <h1>Copo da Felicidade.</h1>
+                    <h2>O Copo da Felicidade é a sobremesa perfeita para quem ama cremosidade e sabor! Feito com camadas generosas de creme de brigadeiro,
+                    creme de leite Ninho e morangos frescos, ele combina doçura e frescor em cada colherada.
+                    Uma explosão de sabor que vai deixar seu dia ainda mais especial! 🍓🍫✨</h2>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-imagem">
+                    <img src="imagens/trufaedit.png" alt="Trufa">
+                </div>
+                <div class="slide-texto">
+                    <h1>Trufa de Oreo.</h1>
+                    <h2>A Trufa de Oreo traz a combinação perfeita entre a crocância do biscoito e a cremosidade do recheio.
+                    Com uma casquinha de chocolate ao leite crocante e recheio saboroso de Oreo, cada pedaço é uma explosão de sabor! 🍪🍫</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destaques -->
+    <section class="destaques">
+        <h2>Produtos Mais Vendidos</h2>
+        <div class="destaques-container">
+            <div class="destaque-item">
+                <img src="imagens/boloninho.jpg" alt="Destaque 2">
+                <p>Bolo de Ninho</p>
+            </div>
+            <div class="destaque-item">
+                <img src="imagens/Copodafelicidade.jpg" alt="Destaque 3">
+                <p>Copo da Felicidade</p>
+            </div>
+            <div class="destaque-item">
+                <img src="imagens/florestanegra.jpg" alt="Destaque 1">
+                <p>Floresta Negra</p>
+            </div>
+            <div class="destaque-item">
+                <img src="imagens/tortaromeuejulieta.jpg" alt="Destaque 2">
+                <p>Torta Romeu e Julieta</p>
+            </div>
+            <div class="destaque-item">
+                <img src="imagens/Trufa.jpg" alt="Destaque 3">
+                <p>Trufa Oreo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informações sobre Entrega -->
+    <section class="informacoes-entrega">
+        <h2>Informações sobre Entrega</h2>
+        <div class="entrega-container">
+            <!-- Entrega via iFood -->
+            <div class="entrega-item">
+                <div class="icone-entrega">🍰</div>
+                <h3>Entrega via iFood</h3>
+                <p>Peça pelo iFood e receba em casa! Basta pesquisar por <strong>Grão Café</strong> no aplicativo.</p>
+                <p>Entregamos em toda a região de Uberlândia.</p>
+            </div>
+
+            <!-- Prazos de Entrega -->
+            <div class="entrega-item">
+                <div class="icone-entrega">⏰</div>
+                <h3>Prazos de Entrega</h3>
+                <p>Pedidos feitos até <strong>12h</strong> serão entregues até <strong>18h</strong> do mesmo dia.</p>
+                <p>Para pedidos feitos após <strong>12h</strong>, a entrega será feita em até <strong>1 dia útil</strong>, até às <strong>18h</strong>, após confirmação de pagamento.</p>
+            </div>
+
+            <!-- Agendamento de Pedidos -->
+            <div class="entrega-item">
+                <div class="icone-entrega">📅</div>
+                <h3>Agendamento de Pedidos</h3>
+                <p>Para entregas agendadas, pedimos que o pedido seja feito com <strong>1 dia de antecedência</strong>.</p>
+                <p>Entre em contato conosco para agendar sua entrega!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="sobre">
+        <h2>Sobre Nós</h2>
+        <div class="sobre-container">
+            <!-- Instagram -->
+            <div class="sobre-item">
+                <div class="icone-sobre"><i class="fab fa-instagram"></i></div>
+                <h3>Instagram</h3>
+                <p>Siga-nos no Instagram para ficar por dentro das novidades!</p>
+                <a href="https://www.instagram.com/graocafeconfeitaria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="botao-instagram">@graocafe</a>
+            </div>
+
+            <!-- Telefone -->
+            <div class="sobre-item">
+            <div class="icone-sobre"><i class="fab fa-whatsapp"></i></div> <!-- Ícone do WhatsApp -->
+            <h3>WhatsApp</h3>
+            <p>Entre em contato conosco pelo WhatsApp ou ligue para nós.</p>
+            <a href="https://wa.me/c/553492535056" class="botao-telefone">(34) 9 9253-5056</a>
+        </div>
+
+            <!-- E-mail -->
+        <div class="sobre-item">
+            <div class="icone-sobre"><i class="fas fa-envelope"></i></div> <!-- Ícone do Gmail -->
+            <h3>E-mail</h3>
+            <p>Envie-nos um e-mail para tirar dúvidas ou fazer seus pedidos.</p>
+            <a href="mailto:contato@graocafe.com.br" class="botao-email">contato@graocafe.com.br</a>
+        </div>
+
+            <!-- Endereço -->
+            <div class="sobre-item">
+                <div class="icone-sobre">📍</div>
+                <h3>Endereço</h3>
+                <p>Venha nos visitar!</p>
+                <a href="https://www.google.com/maps?q=Rua+Barão+de+Cotegipe,+325+-+Custódio+Pereira,+Uberlândia+-+MG" target="_blank" class="endereco">
+                    Rua Barão de Cotegipe, 325 - Custódio Pereira, Uberlândia - MG
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2023 Grão Café. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Grão Café</title>
+    <link rel="stylesheet" href="carrinho.css">
+    <link rel="shortcut icon" href="imagens/pnglogo (1).png" type="image/x-icon">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="imagens/grãocaféimagem.png" alt="Logo Grão Café">
+        </div>
+    </header>
+    
+    <!-- Menu Fixo -->
+    <nav class="menu">
+        <div class="logo-frase">
+            <img src="imagens/logoredonda.png" alt="Logo Grão Café" class="logo-menu">
+            <span class="frase-pedido">Faça já o seu pedido!</span>
+        </div>
+        <ul>
+            <li><a href="produtos.html">Nossos Produtos</a></li>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="login.html">Minha Conta</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="carrinho-login-menu">
+            <span>R$</span>
+            <span id="carrinho-valor-menu">0.00</span>
+            <span id="carrinho-quantidade">0 itens</span>
+            <span class="login-icon-menu">👤</span>
+        </div>
+    </nav>
+
+    <!-- Conteúdo do Carrinho -->
+    <section class="conteudo-carrinho">
+        <h2>Seu Carrinho</h2>
+        <div id="lista-carrinho"></div>
+        <div class="total-carrinho">
+            <h3>Total: <span id="total-carrinho">R$0.00</span></h3>
+        </div>
+
+        <!-- Formulário de Pagamento (só aparece se houver produtos no carrinho) -->
+        <div id="formulario-pagamento" class="formulario-pagamento">
+            <h3>Forma de Pagamento</h3>
+            <form id="form-pagamento">
+                <!-- Seleção de forma de pagamento -->
+                <div class="form-group">
+                    <label for="forma-pagamento">Escolha a forma de pagamento:</label>
+                    <select id="forma-pagamento" name="forma-pagamento" required>
+                        <option value="">Selecione...</option>
+                        <option value="cartao">Cartão de Crédito/Débito</option>
+                        <option value="pix">PIX</option>
+                        <option value="dinheiro">Dinheiro na Entrega</option>
+                    </select>
+                </div>
+
+                <!-- Campos de dados (inicialmente ocultos) -->
+                <div id="campos-dados" style="display: none;">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="text" id="telefone" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" id="endereco" name="endereco" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="numero">Número:</label>
+                        <input type="text" id="numero" name="numero" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="complemento">Complemento:</label>
+                        <input type="text" id="complemento" name="complemento">
+                    </div>
+                    <div class="form-group">
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado:</label>
+                        <input type="text" id="estado" name="estado" required>
+                    </div>
+                    <!-- Campos específicos para cartão (inicialmente ocultos) -->
+                    <div id="campos-cartao" style="display: none;">
+                        <div class="form-group">
+                            <label for="cartao">Número do Cartão:</label>
+                            <input type="text" id="cartao" name="cartao" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="validade">Validade:</label>
+                            <input type="text" id="validade" name="validade" placeholder="MM/AA" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" name="cvv" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="botao-finalizar">Finalizar Compra</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2023 Grão Café. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Recuperar o carrinho do localStorage
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        let totalCarrinho = parseFloat(localStorage.getItem('totalCarrinho')) || 0;
+        let quantidadeItens = parseInt(localStorage.getItem('quantidadeItens')) || 0;
+
+        // Função para atualizar a lista de itens no carrinho
+        function atualizarListaCarrinho() {
+            const listaCarrinho = document.getElementById('lista-carrinho');
+            const totalCarrinhoElement = document.getElementById('total-carrinho');
+            const formularioPagamento = document.getElementById('formulario-pagamento');
+
+            listaCarrinho.innerHTML = '';
+            let total = 0;
+
+            if (carrinho.length === 0) {
+                listaCarrinho.innerHTML = '<p class="carrinho-vazio">Seu carrinho está vazio.</p>';
+                totalCarrinhoElement.textContent = 'R$0.00';
+                formularioPagamento.style.display = 'none'; // Oculta o formulário de pagamento
+                return;
+            }
+
+            carrinho.forEach((item, index) => {
+                const itemCarrinho = document.createElement('div');
+                itemCarrinho.classList.add('item-carrinho');
+
+                itemCarrinho.innerHTML = `
+                    <div class="item-info">
+                        <h3>${item.nome}</h3>
+                        <p>Quantidade: ${item.quantidade}</p>
+                        ${item.sabor ? `<p>Sabor: ${item.sabor}</p>` : ''}
+                        <p>Preço: R$${(item.preco * item.quantidade).toFixed(2)}</p>
+                        <button onclick="removerItem(${index})">Remover</button>
+                    </div>
+                `;
+
+                listaCarrinho.appendChild(itemCarrinho);
+                total += item.preco * item.quantidade;
+            });
+
+            totalCarrinhoElement.textContent = `R$${total.toFixed(2)}`;
+            formularioPagamento.style.display = 'block'; // Exibe o formulário de pagamento
+        }
+
+        // Função para remover item do carrinho
+        function removerItem(index) {
+            const itemRemovido = carrinho.splice(index, 1)[0];
+            totalCarrinho -= itemRemovido.preco * itemRemovido.quantidade;
+            quantidadeItens -= itemRemovido.quantidade;
+
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            localStorage.setItem('totalCarrinho', totalCarrinho.toFixed(2));
+            localStorage.setItem('quantidadeItens', quantidadeItens);
+
+            atualizarListaCarrinho();
+        }
+
+        // Mostrar campos de dados após selecionar a forma de pagamento
+        document.getElementById('forma-pagamento').addEventListener('change', function () {
+            const camposDados = document.getElementById('campos-dados');
+            const camposCartao = document.getElementById('campos-cartao');
+
+            if (this.value) {
+                camposDados.style.display = 'block'; // Mostra os campos de dados
+                camposCartao.style.display = this.value === 'cartao' ? 'block' : 'none'; // Mostra campos do cartão se necessário
+            } else {
+                camposDados.style.display = 'none'; // Oculta os campos de dados
+            }
+        });
+
+        // Função para finalizar a compra
+        document.getElementById('form-pagamento').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (carrinho.length === 0) {
+                alert('Seu carrinho está vazio. Adicione produtos antes de finalizar a compra.');
+                return;
+            }
+
+            // Simulação de processamento de pagamento
+            alert('Compra finalizada com sucesso! Obrigado por escolher Grão Café.');
+            localStorage.removeItem('carrinho');
+            localStorage.removeItem('totalCarrinho');
+            localStorage.removeItem('quantidadeItens');
+            window.location.href = 'index.html'; // Redirecionar para a página inicial
+        });
+
+        // Inicializar a lista do carrinho ao carregar a página
+        atualizarListaCarrinho();
+    </script>
+</body>
+</html>

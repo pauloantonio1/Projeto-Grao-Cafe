@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grão Café - Confeitaria</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="imagens/pnglogo (1).png" type="image/x-icon">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <!-- Espaço para o logo -->
+            <img src="imagens/grãocaféimagem.png" alt="Logo Grão Café">
+        </div>
+    </header>
+
+    <!-- Menu Fixo -->
+    <nav class="menu">
+        <div class="logo-frase">
+            <img src="imagens/grãocaféimagem.png" alt="Logo Grão Café" class="logo-menu">
+            <span class="frase-pedido">Faça já o seu pedido!</span>
+        </div>
+        <ul>
+            <li><a href="online.html">Loja Online</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="login.html">Minha Conta</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="carrinho-login-menu">
+            <span>R$</span>
+            <span id="carrinho-valor-menu">0.00</span>
+            <span class="login-icon-menu">👤</span>
+        </div>
+    </nav>
+
+    <!-- Banner com slideshow -->
+    <section class="banner">
+        <div class="slideshow-container">
+            <!-- Slides -->
+            <div class="slide active">
+                <div class="slide-imagem">
+                    <img src="imagens/boloninho.jpg" alt="Bolo de chocolate">
+                </div>
+                <div class="slide-texto">
+                    <h1>Bolo de Ninho com Morango</h1>
+                    <h2>Delicadeza e sabor em cada fatia! Nosso Bolo de Ninho com Morango combina a suavidade do leite Ninho com o frescor dos morangos,
+                        recheado com musse e brigadeiro de leite Ninho.
+                        Uma experiência irresistível para adoçar seus momentos especiais! 🍓✨</h2>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-imagem">
+                    <img src="imagens/florestanegra.jpg" alt="Floresta Negra">
+                </div>
+                <div class="slide-texto">
+                    <h1>Floresta Negra</h1>
+                    <h2>O clássico Floresta Negra com um toque especial: recheio cremoso de cream cheese, chocolate branco e cerejas, envolto em massa de chocolate fofinha.
+                    Uma explosão de sabor em cada fatia! 🍒🍫✨</h2>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-imagem">
+                    <img src="imagens/tortaromeuejulieta.jpg" alt="Torta Romeu e Julieta">
+                </div>
+                <div class="slide-texto">
+                    <h1>Torta Romeu e Julieta</h1>
+                    <h2>A Torta Romeu e Julieta é a combinação perfeita de sabores! Feita com um delicioso creme de cream cheese e chocolate branco, harmonizado com um suave creme de goiabada,
+                    essa sobremesa une o doce e o salgado de forma irresistível.
+                    Cada pedaço é uma verdadeira experiência para o paladar! ❤️🧀🍓</h2>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-imagem">
+                    <img src="imagens/copofelicidadeedit.png" alt="Copo da Felicidade">
+                </div>
+                <div class="slide-texto">
+                    <h1>Copo da Felicidade.</h1>
+                    <h2>O Copo da Felicidade é a sobremesa perfeita para quem ama cremosidade e sabor! Feito com camadas generosas de creme de brigadeiro,
+                    creme de leite Ninho e morangos frescos, ele combina doçura e frescor em cada colherada.
+                    Uma explosão de sabor que vai deixar seu dia ainda mais especial! 🍓🍫✨</h2>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-imagem">
+                    <img src="imagens/trufaedit.png" alt="Trufa">
+                </div>
+                <div class="slide-texto">
+                    <h1>Trufa de Oreo.</h1>
+                    <h2>A Trufa de Oreo traz a combinação perfeita entre a crocância do biscoito e a cremosidade do recheio.
+                    Com uma casquinha de chocolate ao leite crocante e recheio saboroso de Oreo, cada pedaço é uma explosão de sabor! 🍪🍫</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destaques -->
+    <section class="destaques">
+        <h2>Destaques</h2>
+        <div class="destaques-container">
+            <div class="destaque-item">
+                <img src="imagens/boloninho.jpg" alt="Destaque 2">
+                <p>Cafés Especiais</p>
+            </div>
+            <div class="destaque-item">
+                <img src="imagens/Copodafelicidade.jpg" alt="Destaque 3">
+                <p>Doces Finos</p>
+            </div>
+            <div class="destaque-item">
+                <img src="imagens/florestanegra.jpg" alt="Destaque 1">
+                <p>Bolos Artesanais</p>
+            </div>
+            <div class="destaque-item">
+                <img src="imagens/tortaromeuejulieta.jpg" alt="Destaque 2">
+                <p>Cafés Especiais</p>
+            </div>
+            <div class="destaque-item">
+                <img src="imagens/Trufa.jpg" alt="Destaque 3">
+                <p>Doces Finos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2023 Grão Café. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+online:
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grão Café - Confeitaria</title>
+    <link rel="stylesheet" href="styleonline.css">
+    <link rel="shortcut icon" href="imagens/pnglogo (1).png" type="image/x-icon">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <!-- Espaço para o logo -->
+            <img src="imagens/grãocaféimagem.png" alt="Logo Grão Café">
+        </div>
+    </header>
+
+    <!-- Menu Fixo -->
+    <nav class="menu">
+        <div class="logo-frase">
+            <img src="imagens/grãocaféimagem.png" alt="Logo Grão Café" class="logo-menu">
+            <span class="frase-pedido">Faça já o seu pedido!</span>
+        </div>
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="login.html">Minha Conta</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="carrinho-login-menu">
+            <span>R$</span>
+            <span id="carrinho-valor-menu">0.00</span>
+            <span class="login-icon-menu">👤</span>
+        </div>
+    </nav>
+     <!-- Nossos Produtos -->
+     <section class="Nossos Produtos">
+        <h2>Nossos Produtos</h2>
+        <div class="destaques-container">
+            <div class="destaque-item">
+                <img src="imagens/boloninho.jpg" alt="Destaque 2">
+                <p>Cafés Especiais</p>
+            </div>
+            <div class="destaque-item">
+                <img src="imagens/Copodafelicidade.jpg" alt="Destaque 3">
+                <p>Doces Finos</p>
+            </div>
+            <div class="destaque-item">
+                <img src="imagens/florestanegra.jpg" alt="Destaque 1">
+                <p>Bolos Artesanais</p>
+            </div>
+            <div class="destaque-item">
+                <img src="imagens/tortaromeuejulieta.jpg" alt="Destaque 2">
+                <p>Cafés Especiais</p>
+            </div>
+            <div class="destaque-item">
+                <img src="imagens/Trufa.jpg" alt="Destaque 3">
+                <p>Doces Finos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2023 Grão Café. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+js:
+
+// Slideshow automático
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index) {
+    // Oculta todos os slides
+    slides.forEach((slide) => {
+        slide.classList.remove("active");
+    });
+
+    // Mostra o slide atual
+    slides[index].classList.add("active");
+}
+
+function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+}
+
+// Inicia o slideshow
+setInterval(nextSlide, 7000); // Muda a cada 7 segundos
+
+// Mostra o primeiro slide ao carregar a página
+showSlide(slideIndex);
+
+// Carrinho (exemplo simples)
+const carrinhoValor = document.getElementById("carrinho-valor");
+const carrinhoValorMenu = document.getElementById("carrinho-valor-menu");
+let valorTotal = 0;
+
+function adicionarAoCarrinho(valor) {
+    valorTotal += valor;
+    carrinhoValor.textContent = valorTotal.toFixed(2);
+    carrinhoValorMenu.textContent = valorTotal.toFixed(2);
+}
+
+// Exemplo de adicionar produto
+adicionarAoCarrinho(0.00); // Adiciona R$ 10.50 ao carrinho
+
+// Mostrar/ocultar carrinho no topo e no menu ao rolar a página
+const carrinhoLoginTopo = document.querySelector(".carrinho-login");
+const carrinhoLoginMenu = document.querySelector(".carrinho-login-menu");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) { // Após rolar 100px
+        carrinhoLoginTopo.style.display = "none"; // Oculta o carrinho no topo
+        carrinhoLoginMenu.classList.add("visible"); // Mostra o carrinho no menu
+    } else {
+        carrinhoLoginTopo.style.display = "flex"; // Mostra o carrinho no topo
+        carrinhoLoginMenu.classList.remove("visible"); // Oculta o carrinho no menu
+    }
+});
